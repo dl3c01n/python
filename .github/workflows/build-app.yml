@@ -18,6 +18,6 @@ jobs:
         run: pytest
       - name: Check on fail
         if: steps.runtests.outcome != 'success'
-        uses: JasonEtco/create-an-issue@v2
+        uses: dacbd/create-issue-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
