@@ -18,6 +18,8 @@ jobs:
         run: pytest
       - name: Check on fail
         if: steps.runtests.outcome != 'success'
-        uses: dacbd/create-issue-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          title: Simple test issue
+          body: my new issue
