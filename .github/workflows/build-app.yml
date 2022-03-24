@@ -14,10 +14,9 @@ jobs:
       - name : Install deps
         run: pip install -r requirements.txt
       - name: Run tests
-        id: runtests
         run: pytest
       - name: Check on fail
-        if: steps.runtests.outcome != 'success'
+        if: ${{ failure() }}
         uses: dacbd/create-issue-action@main
         with:
           token: ${{ secrets.GIT_TOKEN }}
