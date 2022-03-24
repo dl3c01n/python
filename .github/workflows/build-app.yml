@@ -14,10 +14,8 @@ jobs:
       - name : Install deps
         run: pip install -r requirements.txt
       - name: Run tests
-        id: runtests
         run: pytest
-      - name: Check fail
-        if: (!job.steps.runtests.status == failure())
+        if: failure()
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
