@@ -1,6 +1,6 @@
 from __future__ import print_function
 from pytest import fixture
-print('From dev')
+print('DEV')
 
 
 @fixture
